@@ -37,7 +37,6 @@ jobs:
       - name: Install dependencies
         run: |
           pushd './'
-          pnpm install --frozen-lockfile
           pnpm run build
           popd
         shell: bash
@@ -48,6 +47,6 @@ jobs:
         with:
           app-name: 'linebot-server'
           slot-name: 'Production'
-          package: '/'
+          package: '/dist'
           publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
   
