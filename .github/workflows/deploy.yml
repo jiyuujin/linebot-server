@@ -27,6 +27,13 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 8
+          run_install: false
+
       - name: Install dependencies
         run: |
           pushd './'
